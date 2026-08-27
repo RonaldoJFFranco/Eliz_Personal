@@ -273,22 +273,26 @@
 .reveal-on-scroll {
   opacity: 0;
   visibility: hidden;
-  --reveal-delay: 0ms;
   will-change: opacity, transform, filter;
+  --reveal-delay: 0ms;
 }
 .reveal-on-scroll.animate-fade-in-up {
   transform: translateY(40px);
   filter: blur(4px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay),
-              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay),
-              filter 0.8s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay);
+  transition: 
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay),
+    filter 0.9s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay),
+    visibility 0.9s step-start;
 }
 .reveal-on-scroll.animate-zoom-in {
-  transform: scale(0.88);
+  transform: scale(0.85);
   filter: blur(4px);
-  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay),
-              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay),
-              filter 0.9s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay);
+  transition: 
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay),
+    filter 0.9s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay),
+    visibility 0.9s step-start;
 }
 .reveal-on-scroll.is-visible {
   opacity: 1 !important;

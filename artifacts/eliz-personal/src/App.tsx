@@ -433,7 +433,7 @@ function Method() {
       data-testid="section-method"
     >
       <div className="shell method-grid">
-        <div>
+        <div className="description">
           <p className="eyebrow">O método Eliz</p>
           <h2 className="display reveal-on-scroll animate-fade-in-up">
             Pequenas mudanças.
