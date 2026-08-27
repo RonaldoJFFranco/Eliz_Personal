@@ -270,45 +270,24 @@
 .delay-2 { animation-delay: .2s; }
 @keyframes rise-in { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
 
+/* --- Animação base idêntica ao Hero --- */
 .reveal-on-scroll {
-  opacity: 0;
-  visibility: hidden;
-  will-change: opacity, transform, filter;
-  --reveal-delay: 0ms;
+  opacity: 0 !important;
+  transform: translateY(18px) !important;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  will-change: opacity, transform;
 }
-.reveal-on-scroll.animate-fade-in-up {
-  transform: translateY(40px);
-  filter: blur(4px);
-  transition: 
-    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay),
-    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay),
-    filter 0.9s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay),
-    visibility 0.9s step-start;
-}
-.reveal-on-scroll.animate-zoom-in {
-  transform: scale(0.85);
-  filter: blur(4px);
-  transition: 
-    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay),
-    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay),
-    filter 0.9s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay),
-    visibility 0.9s step-start;
-}
+
+/* Delay para elementos em sequência */
+.reveal-on-scroll.delay-100 { transition-delay: 100ms; }
+.reveal-on-scroll.delay-200 { transition-delay: 200ms; }
+.reveal-on-scroll.delay-300 { transition-delay: 300ms; }
+
+/* Estado visível acionado pelo JS */
 .reveal-on-scroll.is-visible {
   opacity: 1 !important;
-  visibility: visible !important;
-  transform: translateY(0) scale(1) !important;
-  filter: blur(0) !important;
+  transform: translateY(0) !important;
 }
-.reveal-on-scroll.is-visible.animate-fade-in-up {
-  animation: reveal-fade-in-up 1.2s cubic-bezier(.16, 1, .3, 1) var(--reveal-delay) both;
-}
-.reveal-on-scroll.is-visible.animate-zoom-in {
-  animation: reveal-zoom-in 1.4s cubic-bezier(.16, 1, .3, 1) var(--reveal-delay) both;
-}
-.delay-100 { --reveal-delay: 100ms; }
-.delay-200 { --reveal-delay: 200ms; }
-.delay-300 { --reveal-delay: 300ms; }
 .button-outline.reveal-on-scroll.is-visible,
 .button-primary.reveal-on-scroll.is-visible {
   animation:
@@ -370,7 +349,7 @@
   .stories-top { align-items: start; flex-direction: column; }
   .story-controls { margin-top: 5px; }
 }
-
+/* 
 @media (prefers-reduced-motion: reduce) {
   .reveal-on-scroll, 
   .reveal-on-scroll.is-visible {
@@ -380,4 +359,4 @@
     filter: none !important;
     transition: none !important;
   }
-}
+} */
