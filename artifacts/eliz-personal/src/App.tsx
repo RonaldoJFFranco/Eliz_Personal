@@ -44,7 +44,7 @@ const testimonials = [
   },
   {
     quote:
-      "Esses treinos ficaram a minha cara né kkkk Difícil de fazer mais sem demorar muito 😊.",
+      "Esses treinos ficaram a minha cara né kkkk Difícil de fazer mas sem demorar muito 😊.",
     name: "K. D.",
     detail: "Consultoria online",
     initials: "KD",
@@ -65,7 +65,7 @@ const faqs = [
   {
     question: "Quando podemos começar?",
     answer:
-      "Agora mesmo! Envie uma mensagem pelo WhatsApp contando um pouco sobre seu objetivo. Vamos conversar e juntas encontraremos a melhor estatégia para alcançar o seu objetivo.",
+      "Agora mesmo! Envie uma mensagem pelo WhatsApp contando um pouco sobre seu objetivo. Vamos conversar e juntas encontraremos a melhor estratégia para alcançar o seu objetivo.",
   },
 ];
 
@@ -277,7 +277,7 @@ function Hero() {
             </AnchorLink>
           </div>
           <p className="hero-note">
-            <Check size={15} strokeWidth={3} /> Com treinos adpatados para você.
+            <Check size={15} strokeWidth={3} /> Com treinos adaptados para você.
           </p>
         </div>
       </div>
@@ -340,7 +340,7 @@ function About() {
             Oi, eu sou a Eliz.
           </h2>
           <p className="reveal-on-scroll animate-fade-in-up">
-            Acredito que treinar e mais que somente cargas e séries. É um
+            Acredito que treinar é mais que somente cargas e séries. É um
             momento de conexão entre corpo e mente que transformam sua vida!
           </p>
           <p className="mt-4 reveal-on-scroll animate-fade-in-up">
@@ -349,7 +349,7 @@ function About() {
             suficiente para durar.
           </p>
           <p className="signature reveal-on-scroll animate-fade-in-up">
-            vamos fazer de cada treino um momento único!
+            Vamos fazer de cada treino um momento único!
           </p>
         </div>
       </div>
