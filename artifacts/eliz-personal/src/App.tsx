@@ -37,14 +37,14 @@ const testimonials = [
     initials: "AC",
   },
   {
-    quote: "Eu amei o treino , foi muito produtivo , estou sentindo posterior e glúteo até hoje rs, e ainda consegui fazer 20min de cardio",
+    quote: "Eu amei o treino, foi muito produtivo, estou sentindo posterior e glúteo até hoje rs, e ainda consegui fazer 20min de cardio",
     name: "L. D.",
     detail: "Consultoria online",
     initials: "LD",
   },
   {
     quote:
-      "Esses treinos ficou a minha cara né  kkkk Difícil de fazer mais sem demorar muito 😊.",
+      "Esses treinos ficaram a minha cara né kkkk Difícil de fazer mais sem demorar muito 😊.",
     name: "K. D.",
     detail: "Consultoria online",
     initials: "KD",
