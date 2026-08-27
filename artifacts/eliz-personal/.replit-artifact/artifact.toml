@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Eliz Personal"
+description = "A high-converting mobile-first personal training landing page for Eliz, with a bold pink fitness identity, responsive sections, social proof, FAQs, and direct WhatsApp calls to action."
+version = "1.0.0"
+id = "artifacts/eliz-personal"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24678
+
+[services.development]
+run = "pnpm --filter @workspace/eliz-personal run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/eliz-personal", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/eliz-personal/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24678"
+BASE_PATH = "/"
