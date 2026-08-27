@@ -1,0 +1,49 @@
+Atue como um Engenheiro Front-End Senior e Designer de UX/UI especializado em microinterações de alta performance e experiência do usuário elegante.
+
+Preciso que você analise a estrutura da Single Page Application (SPA) criada para a personal trainer Eliz Personal e implemente animações suaves ao rolar a página (on-scroll animations).
+
+Objetivo e Diretrizes de Design:
+
+Propósito: Os elementos devem surgir elegantemente à medida que o usuário rola a página para enriquecer a narrativa e a retenção visual.
+
+Profissionalismo: As animações precisam ser extremamente sutis, fluidas e sofisticadas. Evite estritamente efeitos exagerados, rápidos ou amadores (como giros, sobressaltos agressivos, pop-ups piscantes ou elementos voando de fora da tela).
+
+Performance: A implementação deve ser ultra leve, especialmente para dispositivos móveis. Não deve causar travamentos ou problemas de rolagem horizontal (overflow-x). Dê preferência a CSS moderno (transform, opacity) e JavaScript minimalista (usando a API nativa Intersection Observer).
+
+Instruções de Implementação:
+1. Estratégia e Métrica Global
+Abordagem Técnica: Utilize CSS puro com a Intersection Observer API nativa do JavaScript (ou Tailwind CSS se o projeto utilizar), garantindo zero dependências externas pesadas.
+
+Parâmetros Globais: Configurar duração padrão entre 400ms e 600ms, com curva de transição suave (ex: ease-out ou cubic-bezier(0.16, 1, 0.3, 1)).
+
+2. Mapeamento por Tipo de Elemento
+A. Títulos Principais (H1 e H2):
+
+Efeito: Slide-up sutil combinado com fade-in. O título inicia 20px abaixo do ponto original com transparência e sobe suavemente para a posição final enquanto ganha opacidade.
+
+B. Textos e Parágrafos:
+
+Efeito: Fade-in simples e limpo, garantindo que a leitura seja rápida e agradável sem distrações visuais.
+
+C. Cards de Serviços / Módulos em Grid:
+
+Efeito: Implementar aparição sequencial (staggered fade-in). O primeiro card surge, e os subsequentes surgem com um pequeno atraso em cadeia (atraso de 100ms a 150ms entre cada um).
+
+D. Imagens e Fotos Profissionais:
+
+Efeito: Scale-up sutil (inicia em escala 0.95 e vai para 1.0 junto ao fade-in), transmitindo uma sensação moderna de revelação e destaque.
+
+E. Botões de Chamada para Ação (CTA / WhatsApp):
+
+Efeito: Aparecem por último na ordem da seção (delayed fade-up). Ao entrarem na tela, recebem uma animação sutil de pulso único na cor rosa principal para atrair o clique sem ser invasivo.
+
+F. Depoimentos e Prova Social:
+
+Efeito: Aparição sequencial em bloco (staggered) com deslizamento sutil para cima.
+
+3. Entrega do Código
+Atualize os arquivos do projeto (index.html, style.css e script.js ou os componentes do React/Tailwind) com a nova estrutura de classes (ex: .animate-on-scroll, .fade-up, .stagger-delay).
+
+Garanta que elementos acima da dobra (no topo do Hero) carreguem imediatamente sem esperar pela rolagem.
+
+Adicione suporte para a propriedade CSS @media (prefers-reduced-motion: reduce) por acessibilidade.

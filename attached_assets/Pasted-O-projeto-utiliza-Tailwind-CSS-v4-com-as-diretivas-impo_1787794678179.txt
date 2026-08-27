@@ -1,0 +1,57 @@
+O projeto utiliza Tailwind CSS v4 com as diretivas @import 'tailwindcss'; e @import 'tw-animate-css';.
+
+Aplique as animações de scroll diretamente no código usando o tw-animate-css e a IntersectionObserver API nativa:
+
+1. No arquivo HTML / JSX (Componentes):
+
+Adicione a classe reveal-on-scroll em todos os elementos que devem ser animados (títulos H1/H2, parágrafos, cards, fotos e botões).
+
+Não adicione essa classe nos elementos da seção Hero (topo), pois eles devem carregar visíveis imediatamente.
+
+Adicione as classes do tw-animate-css para definir o tipo de animação em cada elemento:
+
+Títulos e Parágrafos: reveal-on-scroll animate-fade-in-up
+
+Cards de Serviços / Grid: reveal-on-scroll animate-fade-in-up com classes de delay (delay-100, delay-200, delay-300)
+
+Fotos / Imagens: reveal-on-scroll animate-zoom-in
+
+Botões CTA: reveal-on-scroll animate-fade-in-up
+
+2. No arquivo CSS principal (onde estão os @imports):
+Adicione a regra abaixo no final do arquivo para controlar a visibilidade antes da rolagem:
+
+CSS
+.reveal-on-scroll {
+  opacity: 0;
+  visibility: hidden;
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+3. No JavaScript (ou script principal/componente principal):
+Adicione este script para ativar a classe .is-visible quando o usuário rolar até o elemento:
+
+JavaScript
+document.addEventListener("DOMContentLoaded", () => {
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px 0px -50px 0px", // Dispara um pouco antes de entrar totalmente na tela
+    threshold: 0.15
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target); // Anima apenas uma vez
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll(".reveal-on-scroll").forEach(el => observer.observe(el));
+});
+Atualize o projeto com essa estrutura para que o tw-animate-css execute a animação no momento exato em que a classe .is-visible for inserida.
