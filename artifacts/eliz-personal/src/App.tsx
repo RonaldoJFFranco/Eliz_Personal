@@ -21,8 +21,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import { Route, Switch, useLocation, Router as WouterRouter } from "wouter";
-import logoPath from "@assets/Sem_título-2_1787703051617.png";
-import trainerPhotoPath from "@assets/image_1787704344454.png";
+import logoPath from "@assets/logo.png";
+import trainerPhotoPath from "@assets/foto.png";
 
 const queryClient = new QueryClient();
 const WHATSAPP_URL =
@@ -68,6 +68,17 @@ const faqs = [
       "Agora mesmo! Envie uma mensagem pelo WhatsApp contando um pouco sobre seu objetivo. Vamos conversar e juntas encontraremos a melhor estratégia para alcançar o seu objetivo.",
   },
 ];
+
+useEffect(() => {
+  let link = document.querySelector<HTMLLinkElement>("link[rel~='icon']");
+  if (!link) {
+    link = document.createElement('link');
+    link.rel = 'icon';
+    document.head.appendChild(link);
+  }
+  link.type = 'image/png';
+  link.href = logoPath;
+}, []);
 
 function useScrollAnimations() {
   useEffect(() => {
