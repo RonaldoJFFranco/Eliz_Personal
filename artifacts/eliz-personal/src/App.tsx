@@ -32,22 +32,22 @@ const testimonials = [
   {
     quote:
       "Segunda cheguei cansada e pensei, acho que não vou hoje, tem casa pra arrumar e estou cansada, mas aí penso que o treino é de 30 minutos e me ajuda a não deixar de ir, pois é rápido.",
-    name: "Ana C.",
-    detail: "Aluna de consultoria online",
+    name: "A. C.",
+    detail: "Consultoria online",
     initials: "AC",
   },
   {
-    quote: ".",
-    name: "Mariana S.",
-    detail: "Consultoria online · 5 meses",
-    initials: "MS",
+    quote: "Eu amei o treino , foi muito produtivo , estou sentindo posterior e glúteo até hoje rs, e ainda consegui fazer 20min de cardio",
+    name: "L. D.",
+    detail: "Consultoria online",
+    initials: "LD",
   },
   {
     quote:
-      "A Eliz enxerga a pessoa inteira, não apenas o peso na barra. Isso mudou tudo para mim.",
-    name: "Luiza P.",
-    detail: "Treino personalizado · 1 ano",
-    initials: "LP",
+      "Esses treinos ficou a minha cara né  kkkk Difícil de fazer mais sem demorar muito 😊.",
+    name: "K. D.",
+    detail: "Consultoria online",
+    initials: "KD",
   },
 ];
 
