@@ -69,13 +69,13 @@ const faqs = [
   },
 ];
 
-
-function useScrollAnimations() {
+export function useScrollAnimations() {
   useEffect(() => {
-    // Pequeno atraso para garantir que o React montou o DOM totalmente
-    const timer = setTimeout(() => {
+    let observer: IntersectionObserver | null = null;
+
+    const setupObserver = () => {
       const elements = Array.from(
-        document.querySelectorAll<HTMLElement>(".reveal-on-scroll"),
+        document.querySelectorAll<HTMLElement>(".reveal-on-scroll:not(.is-visible)")
       );
 
       if (elements.length === 0) return;
@@ -85,7 +85,10 @@ function useScrollAnimations() {
         return;
       }
 
-      const observer = new IntersectionObserver(
+      // Desconecta observer anterior antes de recriar
+      if (observer) observer.disconnect();
+
+      observer = new IntersectionObserver(
         (entries, currentObserver) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -98,13 +101,29 @@ function useScrollAnimations() {
           root: null,
           rootMargin: "0px 0px -50px 0px",
           threshold: 0.1,
-        },
+        }
       );
 
-      elements.forEach((element) => observer.observe(element));
-    }, 100);
+      elements.forEach((element) => observer?.observe(element));
+    };
 
-    return () => clearTimeout(timer);
+    // Executa a busca inicial
+    setupObserver();
+
+    // Observa alterações no DOM caso componentes abaixo demorem a montar
+    const mutationObserver = new MutationObserver(() => {
+      setupObserver();
+    });
+
+    mutationObserver.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+
+    return () => {
+      if (observer) observer.disconnect();
+      mutationObserver.disconnect();
+    };
   }, []);
 }
 
